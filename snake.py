@@ -63,6 +63,13 @@ def move():
     square(food.x, food.y, 9, colorFood)
     update()
     ontimer(move, 100)
+def moveComida ():
+	food.x =+ randrange (-10,11,10)
+	food.y= randrange (-10,11,10)
+if not inside (food):
+	food.x = randrange (-15,15)*10
+	food.y = randrange (-15, 15) *10 
+ontimer (moveComida , 500)
 
 
 setup(420, 420, 370, 0)
@@ -74,4 +81,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
+modeComida()
 done()
