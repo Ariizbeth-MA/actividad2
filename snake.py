@@ -18,10 +18,12 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+#Se agregan los colores aleatorios para Food y Snake
 colores = ["purple", "orange", "yellow", "green", "brown"]
-colorSnake = random.choice(colores)
-colorFood = random.choice(colores)
+colorSnake = random.choice(colores) #Se selecciona aleatoreamente los colores para Snake
+colorFood = random.choice(colores) #Se selecciona aleatoreamente los colores para Food
 
+#Si el color de Food y Snake es igual, se escoge otro color para Snake
 if colorFood == colorSnake:
 	colorSnake = random.choice(colores)
 
@@ -63,12 +65,14 @@ def move():
     square(food.x, food.y, 9, colorFood)
     update()
     ontimer(move, 100)
+
+#Funcion para que la comida se mueva aleatoreamente
 def moveComida ():
 	food.x =+ randrange (-10,11,10)
 	food.y= randrange (-10,11,10)
 if not inside (food):
 	food.x = randrange (-15,15)*10
-	food.y = randrange (-15, 15) *10 
+	food.y = randrange (-15, 15) *10
 ontimer (moveComida , 500)
 
 
